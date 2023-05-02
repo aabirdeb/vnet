@@ -20,13 +20,6 @@ resource "azurerm_subnet" "this" {
 }
 
 
-resource "azurerm_application_security_group" "this" {
-  for_each            = { for v in var.asgs : v => v }
-  name                = each.key
-  resource_group_name = var.resource_group_name
-  location            = var.location
-  tags                = local.vnet_tags
-}
 
 resource "azurerm_network_interface" "this" {
 
