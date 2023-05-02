@@ -18,7 +18,7 @@ resource "azurerm_subnet" "this" {
   private_endpoint_network_policies_enabled = lookup(each.value, "private_endpoint_network_policies_enabled", null) == null ? false : each.value.private_endpoint_network_policies_enabled
 
 }
-
+#new vnet
 
 
 resource "azurerm_network_interface" "this" {
